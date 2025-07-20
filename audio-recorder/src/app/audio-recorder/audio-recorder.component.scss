@@ -1,0 +1,378 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  height: 100vh;
+  background-color: #fff;
+  min-height: 400px;
+
+  @media (max-width: 768px) {
+    height: 70vh;
+    min-height: 300px;
+    padding: 10px;
+  }
+
+  @media (max-width: 480px) {
+    height: 60vh;
+    min-height: 250px;
+    padding: 5px;
+  }
+}
+
+.recorder {
+  background: #fff;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  @media (max-width: 768px) {
+    max-width: 90%;
+    padding: 20px 15px;
+  }
+
+  @media (max-width: 480px) {
+    max-width: 95%;
+    padding: 15px 10px;
+  }
+}
+
+.mic-wrapper {
+  position: absolute;
+  top: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    top: -25px;
+
+    .mic-icon {
+      font-size: 24px;
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
+
+.mic-icon {
+  color: #d40064;
+  font-size: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.wave-container {
+  position: relative;
+  width: 100%;
+  height: 60px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  @media (max-width: 480px) {
+    height: 50px;
+    margin: 5px 0;
+
+    canvas {
+      width: 250px;
+      height: 50px;
+    }
+  }
+}
+
+canvas {
+  border-radius: 5px;
+  background: transparent;
+}
+
+.wave-line {
+  width: 100%;
+  height: 100%;
+  color: #000;
+  white-space: pre;
+  overflow: hidden;
+}
+
+@keyframes waveMove {
+  from {
+    background-position: 0;
+  }
+  to {
+    background-position: 100% 0;
+  }
+}
+
+.cancel-icon {
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.red-x {
+  color: #000;
+  font-size: 20px;
+}
+
+.time {
+  font-size: 16px;
+  color: #000;
+  margin-bottom: 10px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+}
+
+.play-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: linear-gradient(to right, #e60073, #cc0066);
+  color: white;
+  font-size: 24px;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  padding: 0;
+  min-width: 0;
+
+  .mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    line-height: 1;
+    color: white;
+  }
+
+  .mat-mdc-button-touch-target {
+    height: 32px;
+    width: 32px;
+  }
+
+  @media (max-width: 480px) {
+    width: 30px;
+    height: 30px;
+
+    .mat-icon {
+      font-size: 14px;
+      width: 14px;
+      height: 14px;
+    }
+
+    .mat-mdc-button-touch-target {
+      height: 24px;
+      width: 24px;
+    }
+  }
+}
+
+.button-label {
+  font-size: 18px;
+  color: #000;
+  margin-bottom: 20px;
+  margin-top: 20px;
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin: 10px 0;
+  }
+}
+
+.next-button,
+.submit-button {
+  width: 100%;
+  padding: 10px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  background: linear-gradient(to right, #ff0066, #d40064);
+  color: white;
+  margin-top: 60px;
+
+  &:disabled {
+    background-color: #ccc;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 14px;
+    margin-top: 40px;
+    padding: 8px;
+  }
+}
+
+.custom-red-dot {
+  width: 32px;
+  height: 32px;
+  background-color: #d40064;
+  border-radius: 50%;
+
+  @media (max-width: 480px) {
+    width: 24px;
+    height: 24px;
+  }
+}
+
+.bottom-circle {
+  position: absolute;
+  bottom: -35px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  border: 2px solid #e0e0e0;
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+
+  @media (max-width: 480px) {
+    width: 50px;
+    height: 50px;
+    bottom: -25px;
+
+    .record-button {
+      width: 30px;
+      height: 30px;
+
+      .mat-icon {
+        font-size: 14px;
+        width: 14px;
+        height: 14px;
+      }
+
+      .mat-mdc-button-touch-target {
+        height: 24px;
+        width: 24px;
+      }
+    }
+  }
+}
+
+.record-button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #d40064;
+  padding: 0;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  .mat-icon {
+    font-size: 18px;
+    width: 18px;
+    height: 18px;
+    line-height: 1;
+    color: white;
+  }
+
+  .mat-mdc-button-touch-target {
+    height: 32px;
+    width: 32px;
+  }
+}
+
+.circle-connector {
+  position: relative;
+  background: #fff;
+  border-radius: 20px;
+  border: 1px solid #e0e0e0;
+  padding: 60px 20px 60px 20px;
+  width: 100%;
+  max-width: 300px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+
+  @media (max-width: 480px) {
+    max-width: 90%;
+    padding: 40px 10px;
+  }
+}
+
+.curved-bridge {
+  width: 90px;
+  height: 40px;
+  background-color: #fff;
+  border: 2px solid #e0e0e0;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  margin-top: -10px;
+  z-index: 0;
+
+  @media (max-width: 480px) {
+    width: 70px;
+    height: 30px;
+  }
+}
+
+.cancel-icon-circle {
+  position: absolute;
+  top: 65%;
+  right: -15px;
+  width: 32px;
+  height: 32px;
+  background-color: #fff;
+  border: 2px solid black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+  mat-icon {
+    font-size: 18px;
+    color: #000;
+    margin-top: 7px;
+  }
+
+  &:hover {
+    background-color: #f5f5f5;
+  }
+
+  @media (max-width: 480px) {
+    width: 24px;
+    height: 24px;
+    right: -10px;
+
+    mat-icon {
+      font-size: 14px;
+      margin-top: 5px;
+    }
+  }
+}

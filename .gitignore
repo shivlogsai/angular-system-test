@@ -1,0 +1,20 @@
+# Node modules
+/node_modules
+/angular-gallery/node_modules
+/audio-recorder/node_modules
+
+# Dist and build
+/dist
+/angular-gallery/dist
+/audio-recorder/dist
+
+# IDE and system files
+.vscode/
+*.log
+.DS_Store
+Thumbs.db
+
+# Angular
+/.angular
+/angular-gallery/.angular
+/audio-recorder/.angular

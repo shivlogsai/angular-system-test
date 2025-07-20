@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "bootstrap": "^5.3.3",
+    "swiper": "^9.4.1"
+  }
+}

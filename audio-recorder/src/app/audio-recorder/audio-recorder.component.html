@@ -1,0 +1,45 @@
+<div class="container">
+  @if (!isRecorded) {
+    <div class="recorder">
+      <div class="circle-connector">
+      <div class="mic-wrapper">
+        <mat-icon class="mic-icon">mic</mat-icon>
+      </div>
+      <div class="wave-container">
+        <canvas #waveformCanvas width="300" height="60"></canvas>
+      </div>
+
+      <div class="time"><strong>{{ time }}</strong></div>
+<div class="bottom-circle">
+      <button mat-button disableRipple [disabled]="isRecording" (click)="startRecording()" class="record-button">
+  <mat-icon *ngIf="!isRecording" class="custom-red-dot"></mat-icon>
+</button></div>
+</div>
+<div class="button-label">Tap to start recording</div>
+      <button class="next-button" disabled>Next</button>
+    </div>
+  } @else {
+    <div class="recorder">
+       <div class="circle-connector">
+      <div class="mic-wrapper">
+        <mat-icon class="mic-icon">mic</mat-icon>
+      </div>
+
+      <div class="wave-container">
+        <canvas #waveformCanvas width="300" height="60"></canvas>
+       <button *ngIf="isPlaying"class="cancel-icon-circle" (click)="cancelRecording()">
+  <mat-icon>close</mat-icon>
+</button>
+      </div>
+
+      <div class="time"><strong>{{ time }}</strong></div>
+<div class="bottom-circle">
+      <button mat-icon-button (click)="playRecording()" class="play-button">
+  <mat-icon fontIcon="play_arrow" class="play-icon"></mat-icon>
+</button></div>
+    </div>
+    <div class="button-label">Tap to play</div>
+      <button class="submit-button">Submit</button>
+    </div>
+  }
+</div>

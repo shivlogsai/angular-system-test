@@ -1,0 +1,87 @@
+.container {
+  position: relative;
+  height: 80vh;
+  min-height: 300px;
+  @media (max-width: 768px) {
+    height: 60vh;
+    min-height: 250px;
+  }
+  @media (max-width: 480px) {
+    height: 50vh;
+    min-height: 200px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 2;
+}
+
+.img-fluid {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.card-background {
+  position: absolute;
+  top: 56%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #6c757dc4;
+  border: 2px solid #d3d3d3;
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 101%;
+  height: 78vh;
+  z-index: 1;
+  overflow: hidden;
+  @media (max-width: 768px) {
+    width: 95%;
+    height: 85%;
+    border-radius: 12px;
+  }
+  @media (max-width: 480px) {
+    height: 80%;
+  }
+}
+
+.text-start {
+  font-weight: bold;
+  z-index: 10;
+  @media (max-width: 480px) {
+    font-size: 14px;
+    padding: 5px;
+  }
+}
+
+.swiper-pagination {
+  text-align: center;
+  position: relative;
+  margin-top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 3;
+  @media (max-width: 768px) {
+    margin-top: 5px;
+  }
+  @media (max-width: 480px) {
+    margin-top: 3px;
+  }
+}
+
+.swiper-pagination-bullet {
+  width: 10px;
+  height: 10px;
+  background: #ccc;
+  opacity: 1;
+  margin: 0 5px;
+}
+
+.swiper-pagination-bullet-active {
+  background: #007bff;
+}

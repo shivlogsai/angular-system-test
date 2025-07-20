@@ -1,0 +1,10 @@
+<div class="container mt-4 position-relative">
+  <div class="text-start mb-3">Photos {{ currentIndex + 1 }}/{{ images.length }}</div>
+  <swiper-container #swiperRef class="swiper" init="false">
+    <swiper-slide *ngFor="let image of images">
+      <img [src]="image" class="img-fluid rounded" alt="Gallery Image">
+    </swiper-slide>
+  </swiper-container>
+  <div class="card-background"></div>
+  <div class="swiper-pagination"></div>
+</div>
